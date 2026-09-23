@@ -421,7 +421,7 @@ function BusGlyph({ className = "h-5 w-5", color = "currentColor" }: { className
   );
 }
 
-function Icon({ name }: { name: "check" | "bus" | "bell" }) {
+function Icon({ name }: { name: string }) {
   const common = "h-4 w-4";
   if (name === "check")
     return (
