@@ -209,7 +209,9 @@ function Index() {
                   key={n.title}
                   className="flex gap-3 rounded-xl bg-background/60 p-3"
                 >
-                  <span className="text-lg">{n.icon}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-bus-soft text-bus-foreground">
+                    <Icon name={n.icon} />
+                  </span>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline justify-between gap-2">
                       <p className="truncate text-sm font-medium">{n.title}</p>
