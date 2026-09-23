@@ -49,19 +49,19 @@ const stops = [
 
 const notifications = [
   {
-    icon: "✅",
+    icon: "check",
     title: "Aarav has boarded the bus",
     body: "Boarded at Maple Street / 7th Ave at 7:42 AM.",
     time: "7:42 AM",
   },
   {
-    icon: "🚌",
+    icon: "bus",
     title: "Bus 24 is on its way",
     body: "Route R-7 started. ETA to school 8:05 AM.",
     time: "7:30 AM",
   },
   {
-    icon: "🔔",
+    icon: "bell",
     title: "Pickup reminder",
     body: "Bus 24 arriving at your stop in 5 minutes.",
     time: "7:35 AM",
