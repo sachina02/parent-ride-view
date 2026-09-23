@@ -411,3 +411,29 @@ function Stop({
     </g>
   );
 }
+
+// ---- Inline SVG icons (no emoji-font dependency) ---------------------
+function BusGlyph({ className = "h-5 w-5", color = "currentColor" }: { className?: string; color?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill={color} aria-hidden="true">
+      <path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11a1 1 0 0 1-1 1h-1v1.5a1 1 0 0 1-2 0V17H8v1.5a1 1 0 0 1-2 0V17H5a1 1 0 0 1-1-1V5Zm2 5h12V6H6v4Zm0 2v3h12v-3H6Zm1.5 2.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+    </svg>
+  );
+}
+
+function Icon({ name }: { name: "check" | "bus" | "bell" }) {
+  const common = "h-4 w-4";
+  if (name === "check")
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    );
+  if (name === "bus") return <BusGlyph className={common} />;
+  return (
+    <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9Z" />
+      <path d="M6 17v2M18 17v2" />
+    </svg>
+  );
+}
