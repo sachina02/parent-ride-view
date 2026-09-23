@@ -157,7 +157,9 @@ function Index() {
             </div>
             <LiveMap />
             <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-              <span>🚌 {bus.number}</span>
+              <span className="flex items-center gap-1">
+                <BusGlyph className="h-3.5 w-3.5" /> {bus.number}
+              </span>
               <span>{bus.capacity}</span>
               <span>Driver: {bus.driver}</span>
             </div>
@@ -269,8 +271,8 @@ function Header() {
     <header className="sticky top-0 z-10 border-b border-border bg-card/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-bus text-lg">
-            🚌
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-bus text-bus-foreground">
+            <BusGlyph />
           </span>
           <div className="leading-tight">
             <p className="text-base font-semibold tracking-tight">MySchoolBus</p>
@@ -282,7 +284,7 @@ function Header() {
           aria-label="Notifications"
           className="relative flex h-9 w-9 items-center justify-center rounded-full bg-background text-foreground transition-colors hover:bg-accent"
         >
-          🔔
+          <Icon name="bell" />
           <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-destructive" />
         </button>
       </div>
@@ -363,17 +365,10 @@ function LiveMap() {
 
         {/* moving bus */}
         <g>
-          <circle r="13" fill="var(--color-bus)" stroke="white" strokeWidth="2" />
-          <text
-            x="0"
-            y="5"
-            textAnchor="middle"
-            fontSize="14"
-            fontWeight="700"
-            fill="var(--color-bus-foreground)"
-          >
-            🚌
-          </text>
+          <circle r="14" fill="var(--color-bus)" stroke="white" strokeWidth="2.5" />
+          <g transform="translate(-8,-8) scale(0.5)">
+            <BusGlyph color="var(--color-bus-foreground)" />
+          </g>
           <animateMotion
             dur="14s"
             repeatCount="indefinite"
